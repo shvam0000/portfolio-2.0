@@ -41,36 +41,36 @@ function saveContactInfo(name, number, email, feedback) {
     feedback: feedback,
   });
 
-//retriveInfos();
+retriveInfos();
 }
 
 //Retrive Infos
-// function retriveInfos() {
-//   let ref = firebase.database().ref('infos');
-//   ref.on('value', gotData);
-// }
+function retriveInfos() {
+  let ref = firebase.database().ref('infos');
+  ref.on('value', gotData);
+}
 
-// function gotData(data) {
-//   let info = data.val();
-//   let keys = Object.keys(info);
+function gotData(data) {
+  let info = data.val();
+  let keys = Object.keys(info);
 
-//   for (let i = 0; i < keys.length; i++) {
-//     let infoData = keys[i];
-//     let name = info[infoData].name;
-//     let number = info[infoData].number;
-//     let email = info[infoData].email;
-//     let feedback = info[infoData].feedback;
+  for (let i = 0; i < keys.length; i++) {
+    let infoData = keys[i];
+    let name = info[infoData].name;
+    let number = info[infoData].number;
+    let email = info[infoData].email;
+    let feedback = info[infoData].feedback;
 
-//     console.log(name, number, email, feedback);
+    console.log(name, number, email, feedback);
 
-//     let inforResults = document.querySelector('.infoResults');
+    let inforResults = document.querySelector('.infoResults');
 
-//     inforResults.innerHTML += `<p><strong>Name: </strong>${name}</p>
-//     <p><strong>number: </strong>${number}</p>
-//     <p><strong>Email: </strong>${email}</p>
-//     <p><strong>Feedback: </strong>${feedback}</p>`;
-//   }
-// }
+    inforResults.innerHTML += `<p><strong>Name: </strong>${name}</p>
+    <p><strong>number: </strong>${number}</p>
+    <p><strong>Email: </strong>${email}</p>
+    <p><strong>Feedback: </strong>${feedback}</p>`;
+  }
+}
 
 //Send email
 function sendMail(name, email, feedback) {
