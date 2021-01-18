@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <form method="POST" id="feedbackform">
+
+        <label for="name" class="form-label" id="form-label-name">Name</label>
+        <input type="text" class="form-input" id="name">
+        <label for="number" class="form-label" id="form-label-number">Phone number</label>
+        <input type="text" class="form-input" id="number">
+        <label for="email" class="form-label" id="form-label-email">Email</label>
+        <input type="email" class="form-input" id="email">
+        <label for="feedback" class="form-label" id="form-label-feedback">Feedback</label>
+        <input type="text" class="form-input" id="feedback">
+        <button type="submit" class="btn">Submit</button>
+
+    </form>
+
+    <div class="infoResults"></div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
+
